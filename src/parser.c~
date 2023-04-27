@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <math.h>
+
+enum { plus, minus, divi, mul };
+
+struct stack{
+  struct stack * ptr;
+  int value;
+}typedef stack;
+
+stack * push_stack(struct stack * stack_ptr, int value){
+  stack * temp_stack;
+  temp_stack = (stack *)malloc(sizeof(stack *));
+  temp_stack->value = value;
+  temp_stack->ptr = temp_stack;
+  return temp_stack;
+}
+
+int pop_stack(stack * stack_ptr){
+  int temp=stack_ptr->value;
+  free(stack_ptr);
+  return temp;
+}
+
+int main(void)
+{
+  char a[10], b[10], c[10];
+  stack main;
+  main.value = 10;
+  scanf("if %s %s", a, b);
+  if(strcmp(a, "else")){
+    scanf("%s", b);
+  }
+  printf("%s %s", a, b);
+  return 0;
+}
