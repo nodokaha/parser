@@ -65,7 +65,11 @@ parser.o: parser.c \
  /nix/store/iczlqwdj10xiz3mmms6adnra0mn3ljk1-glibc-2.35-224-dev/include/bits/fp-logb.h \
  /nix/store/iczlqwdj10xiz3mmms6adnra0mn3ljk1-glibc-2.35-224-dev/include/bits/fp-fast.h \
  /nix/store/iczlqwdj10xiz3mmms6adnra0mn3ljk1-glibc-2.35-224-dev/include/bits/mathcalls-helper-functions.h \
- /nix/store/iczlqwdj10xiz3mmms6adnra0mn3ljk1-glibc-2.35-224-dev/include/bits/mathcalls.h
+ /nix/store/iczlqwdj10xiz3mmms6adnra0mn3ljk1-glibc-2.35-224-dev/include/bits/mathcalls.h \
+ /nix/store/iczlqwdj10xiz3mmms6adnra0mn3ljk1-glibc-2.35-224-dev/include/libintl.h \
+ /nix/store/iczlqwdj10xiz3mmms6adnra0mn3ljk1-glibc-2.35-224-dev/include/locale.h \
+ /nix/store/iczlqwdj10xiz3mmms6adnra0mn3ljk1-glibc-2.35-224-dev/include/bits/locale.h \
+ ../config.h
 /nix/store/iczlqwdj10xiz3mmms6adnra0mn3ljk1-glibc-2.35-224-dev/include/stdc-predef.h:
 /nix/store/iczlqwdj10xiz3mmms6adnra0mn3ljk1-glibc-2.35-224-dev/include/stdio.h:
 /nix/store/iczlqwdj10xiz3mmms6adnra0mn3ljk1-glibc-2.35-224-dev/include/bits/libc-header-start.h:
@@ -133,3 +137,7 @@ parser.o: parser.c \
 /nix/store/iczlqwdj10xiz3mmms6adnra0mn3ljk1-glibc-2.35-224-dev/include/bits/fp-fast.h:
 /nix/store/iczlqwdj10xiz3mmms6adnra0mn3ljk1-glibc-2.35-224-dev/include/bits/mathcalls-helper-functions.h:
 /nix/store/iczlqwdj10xiz3mmms6adnra0mn3ljk1-glibc-2.35-224-dev/include/bits/mathcalls.h:
+/nix/store/iczlqwdj10xiz3mmms6adnra0mn3ljk1-glibc-2.35-224-dev/include/libintl.h:
+/nix/store/iczlqwdj10xiz3mmms6adnra0mn3ljk1-glibc-2.35-224-dev/include/locale.h:
+/nix/store/iczlqwdj10xiz3mmms6adnra0mn3ljk1-glibc-2.35-224-dev/include/bits/locale.h:
+../config.h:

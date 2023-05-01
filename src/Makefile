@@ -198,6 +198,7 @@ PACKAGE_TARNAME = parser
 PACKAGE_URL = 
 PACKAGE_VERSION = 1.0
 PATH_SEPARATOR = :
+RANLIB = ranlib
 SET_MAKE = 
 SHELL = /bin/sh
 STRIP = 
@@ -246,7 +247,7 @@ top_build_prefix = ../
 top_builddir = ..
 top_srcdir = ..
 parser_SOURCES = parser.c
-AM_CFLAGS = -O2 -g
+AM_CFLAGS = -O2 -DLOCALEDIR=\"$(localedir)\" -g
 all: all-am
 
 .SUFFIXES:

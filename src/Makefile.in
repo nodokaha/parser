@@ -198,6 +198,7 @@ PACKAGE_TARNAME = @PACKAGE_TARNAME@
 PACKAGE_URL = @PACKAGE_URL@
 PACKAGE_VERSION = @PACKAGE_VERSION@
 PATH_SEPARATOR = @PATH_SEPARATOR@
+RANLIB = @RANLIB@
 SET_MAKE = @SET_MAKE@
 SHELL = @SHELL@
 STRIP = @STRIP@
@@ -246,7 +247,7 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 parser_SOURCES = parser.c
-AM_CFLAGS = -O2 -g
+AM_CFLAGS = -O2 -DLOCALEDIR=\"$(localedir)\" -g
 all: all-am
 
 .SUFFIXES:

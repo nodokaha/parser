@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
+#include <libintl.h>
+#include <config.h>
 
 enum { plus, minus, divi, mul };
 
@@ -39,16 +41,32 @@ stack * stack_op(char cmd, stack * now_stack){
   return now_stack;
 }
 
+char * read_buf(char *buf)
+{
+  char * tmp = (char *)malloc(sizeof(char *)*500000);
+  /* for(char tmp_iter[32]; strcmp(tmp_iter, "stop,"); scanf("%s", tmp_iter),strcat(tmp_iter, ",")) */
+  /*   strcat(tmp, tmp_iter); */
+  scanf("%500000[^\EOF]s", tmp);
+  buf = tmp;
+  return buf;
+}
+
 int main(void)
 {
-  printf(">>");
-  char cmd;
-  stack * now_stack=(stack *)malloc(sizeof(stack *));
-  stack * temp_stack;
-  now_stack->ptr = NULL;
-  now_stack->value = 0;
-  while((cmd=getchar()) != 'q'){
-    temp_stack = stack_op(cmd, now_stack); if(temp_stack == NULL){return -1;} now_stack = temp_stack;
-  }
+  setlocale(LC_ALL, "");
+  bindtextdomain(PACKAGE,LOCALEDIR);
+  textdomain(PACKAGE);
+  /* printf(">>"); */
+  /* char cmd; */
+  /* stack * now_stack=(stack *)malloc(sizeof(stack *)); */
+  /* stack * temp_stack; */
+  /* now_stack->ptr = NULL; */
+  /* now_stack->value = 0; */
+  /* while((cmd=getchar()) != 'q'){ */
+  /*   temp_stack = stack_op(cmd, now_stack); if(temp_stack == NULL){return -1;} now_stack = temp_stack; */
+  /* } */
+  char *buf;
+  buf=read_buf(buf);
+  printf("%s", buf);
   return 0;
 }
