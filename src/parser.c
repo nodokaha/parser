@@ -43,10 +43,9 @@ stack * stack_op(char cmd, stack * now_stack){
 
 char * read_buf(char *buf)
 {
-  char * tmp = (char *)malloc(sizeof(char *)*500000);
+  char * tmp = (char *)malloc(sizeof(char *)*50000);
   /* for(char tmp_iter[32]; strcmp(tmp_iter, "stop,"); scanf("%s", tmp_iter),strcat(tmp_iter, ",")) */
   /*   strcat(tmp, tmp_iter); */
-  scanf("%500000[^\EOF]s", tmp);
   buf = tmp;
   return buf;
 }
