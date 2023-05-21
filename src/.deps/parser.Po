@@ -69,7 +69,8 @@ parser.o: parser.c \
  /nix/store/iczlqwdj10xiz3mmms6adnra0mn3ljk1-glibc-2.35-224-dev/include/libintl.h \
  /nix/store/iczlqwdj10xiz3mmms6adnra0mn3ljk1-glibc-2.35-224-dev/include/locale.h \
  /nix/store/iczlqwdj10xiz3mmms6adnra0mn3ljk1-glibc-2.35-224-dev/include/bits/locale.h \
- ../config.h
+ ../config.h \
+ /nix/store/wy4ywjsch9q2hj5lphqjdg9p2kf7w0ls-gcc-11.3.0/lib/gcc/x86_64-unknown-linux-gnu/11.3.0/include/stdbool.h
 /nix/store/iczlqwdj10xiz3mmms6adnra0mn3ljk1-glibc-2.35-224-dev/include/stdc-predef.h:
 /nix/store/iczlqwdj10xiz3mmms6adnra0mn3ljk1-glibc-2.35-224-dev/include/stdio.h:
 /nix/store/iczlqwdj10xiz3mmms6adnra0mn3ljk1-glibc-2.35-224-dev/include/bits/libc-header-start.h:
@@ -141,3 +142,4 @@ parser.o: parser.c \
 /nix/store/iczlqwdj10xiz3mmms6adnra0mn3ljk1-glibc-2.35-224-dev/include/locale.h:
 /nix/store/iczlqwdj10xiz3mmms6adnra0mn3ljk1-glibc-2.35-224-dev/include/bits/locale.h:
 ../config.h:
+/nix/store/wy4ywjsch9q2hj5lphqjdg9p2kf7w0ls-gcc-11.3.0/lib/gcc/x86_64-unknown-linux-gnu/11.3.0/include/stdbool.h:
