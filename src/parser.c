@@ -6,7 +6,7 @@
 #include <config.h>
 #include <stdbool.h>
 
-enum { halt, plus, minus, divi, mul };
+enum { halt, brancr, brancl, plus, divi, minus, mul };
 
 struct stack{
   struct stack * ptr;
@@ -30,11 +30,28 @@ int pop_stack(stack * stack_ptr, bool * ret_op){
   return temp;
 }
 
+stack * exch_stack(stack * stack_ptr){
+  stack * temp_stack;
+  stack * prev_stack;
+  temp_stack = stack_ptr->ptr;
+  prev_stack = temp_stack->ptr;
+  stack_ptr->ptr = prev_stack;
+  temp_stack->ptr = stack_ptr;
+  return temp_stack;
+}
+
 stack * parse_null(stack * stack_ptr){
   return NULL;
 }
 
-stack * tokenize(char * code, stack * now_stack){
+stack * parse_first(stack * stack_ptr){
+  stack * temp_stack;
+  temp_stack = stack_ptr->ptr;
+  pop_stack(stack_ptr, NULL);
+  return temp_stack;
+}
+
+stack * tokenize_parse(char * code, stack * now_stack){
   stack * temp_stack;
   stack * nnow_stack;
   nnow_stack = now_stack;
@@ -46,6 +63,8 @@ stack * tokenize(char * code, stack * now_stack){
     case '-': temp_stack=push_stack(nnow_stack, minus, true); nnow_stack=temp_stack; break;
     case '/': temp_stack=push_stack(nnow_stack, divi, true); nnow_stack=temp_stack; break;
     case '*': temp_stack=push_stack(nnow_stack, mul, true); nnow_stack=temp_stack; break;
+    case '(': temp_stack=push_stack(nnow_stack, brancr, true); nnow_stack=temp_stack; break;
+    case ')': temp_stack=push_stack(nnow_stack, brancl, true); nnow_stack=temp_stack; break;
     default: if(0<sscanf((char *)(code+index), "%d", &num)){ temp_stack=push_stack(nnow_stack, num, false); nnow_stack=temp_stack; num=sprintf(code, "%d", num); index+=(num-1); }; break;
     }
   }
@@ -62,7 +81,8 @@ stack * stack_op(char cmd, stack * now_stack){
   case 'p': printf("%d", now_stack->value); break;
   case '.': printf("%x", now_stack); break;
   case '<': printf("%x", now_stack->ptr); break;
-  case 't': printf("tokenize...\ninput code :"); char buf[1000]; fscanf(stdin, "%[^.]", buf); temp_stack=tokenize(buf, now_stack); now_stack=temp_stack; break;
+  case 't': printf("tokenize...\ninput code :"); char buf[1000]; fscanf(stdin, "%[^.]", buf); temp_stack=tokenize_parse(buf, now_stack); now_stack=temp_stack; break;
+  case 'e': temp_stack = exch_stack(now_stack); now_stack = temp_stack; break;
   default: printf(">>"); break;
     /* default: printf("cmd = %c", cmd); break; */
   }
