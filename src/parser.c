@@ -51,11 +51,15 @@ stack * parse_first(stack * stack_ptr){
   return temp_stack;
 }
 
+stack * parse_add(stack * stack_ptr){
+  
+}
+
 stack * tokenize_parse(char * code, stack * now_stack){
   stack * temp_stack;
   stack * nnow_stack;
   nnow_stack = now_stack;
-  for(int index=0, num=0; code[index] != NULL; index++){
+  for(int index=0, num=0; code[index] != EOF; index++){
     switch (code[index]) {
     case ' ': break;
     case '\n': break;
