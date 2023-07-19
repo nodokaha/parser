@@ -27,8 +27,8 @@ jobs:
       run: make distcheck
       
     - name: upload
-        if: always()
-        uses: actions/upload-artifact@v3
-        with:
-          name: parser
-          path: src/parser
+      if: always()
+      uses: actions/upload-artifact@v3
+      with:
+        name: parser
+        path: src/parser
